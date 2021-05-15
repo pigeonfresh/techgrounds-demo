@@ -1,0 +1,34 @@
+.recommendations-block {
+
+  .intro-copy {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .recommendations-list {
+    display: grid;
+    grid-gap: $gridGap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .recommendation {
+    background: $black;
+    color: $white;
+
+    .copy-wrapper {
+      padding: 20px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .recommendations-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

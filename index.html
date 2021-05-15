@@ -1,12 +1,14 @@
 <html>
   <head>
-    <title>Techgrounds</title>
+    <title>CFF - Techgrounds</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./src/styles/main.scss" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet" />
+    <link rel="stylesheet" href='../tchgrnds/src/styles/main.scss' />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="content-wrapper">
+        <div>Logo</div>
         <nav>
           <a href="#">Home</a>
           <a href="#">About</a>
@@ -15,9 +17,9 @@
       </div>
     </header>
     <main>
-      <div class='content-block'>
+      <div class="content-block hero-block js-transition-block">
         <picture>
-          <img src="media/coffee-shop.jpg" alt="Personnel standing around coffee machine" />
+          <img src='../tchgrnds/media/coffee-shop.jpg' alt="Personnel standing around coffee machine" />
         </picture>
         <div class="content-wrapper">
           <div class="content">
@@ -26,12 +28,12 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis
               dignissimos dolor obcaecati sed vitae?
             </p>
-            <a href='#'>About CFF</a>
-            <a href='#'>Get In Touch</a>
+            <a href='#' class='cta-link primary'>About CFF</a>
+            <a href='#' class='cta-link'>Get In Touch</a>
           </div>
         </div>
       </div>
-      <div class='content-block'>
+      <div class="content-block js-transition-block">
         <div class="content-wrapper">
           <h2>About CFF Coffee</h2>
           <p>
@@ -41,69 +43,80 @@
           <a href="#">Read more about CFF</a>
         </div>
       </div>
-      <div class='content-block'>
+      <div class="content-block recommendations-block js-transition-block">
         <div class="content-wrapper">
-          <h2>Enjoy our three favorite Brews</h2>
-          <p>We love all of our coffees but we have a few that we really enjoy!</p>
-          <ul>
-            <li>
+          <div class="intro-copy">
+            <h2>Enjoy our three favorite Brews</h2>
+            <p>We love all of our coffees but we have a few that we really enjoy!</p>
+          </div>
+          <ul class="recommendations-list">
+            <li class="recommendation">
               <picture>
-                <img src="media/coffee-cold-brew.jpg" alt="Cold brew being made" />
+                <img src='../tchgrnds/media/coffee-cold-brew.jpg' alt="Cold brew being made" />
               </picture>
-              <h3>Cold Brew</h3>
-              <p>Refreshing for those nice summer days</p>
+              <div class="copy-wrapper">
+                <h3>Cold Brew</h3>
+                <p>Refreshing for those nice summer days</p>
+              </div>
             </li>
-            <li>
+            <li class="recommendation">
               <picture>
-                <img src="media/coffee-latte.jpg" alt="Latte being made" />
+                <img src='../tchgrnds/media/coffee-latte.jpg' alt="Latte being made" />
               </picture>
-              <h3>Latte</h3>
-              <p>For those cosy afternoons</p>
+              <div class="copy-wrapper">
+                <h3>Latte</h3>
+                <p>For those cosy afternoons</p>
+              </div>
             </li>
-            <li>
+            <li class="recommendation">
               <picture>
-                <img src="media/coffee-espresso.jpg" alt="Double espresso on a table" />
+                <img src='../tchgrnds/media/coffee-espresso.jpg' alt="Double espresso on a table" />
               </picture>
-              <h3>Espresso</h3>
-              <p>Why not start the day with a nice kick?</p>
+              <div class="copy-wrapper">
+                <h3>Espresso</h3>
+                <p>Why not start the day with a nice kick?</p>
+              </div>
             </li>
           </ul>
         </div>
       </div>
-      <div class='content-block'>
+      <div class="content-block engagement-block js-transition-block">
         <div class="content-wrapper">
           <h2>Follow us on Social Media</h2>
           <div>
-            <a href='#'>Twitter</a>
-            <a href='#'>Facebook</a>
-            <a href='#'>Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
           </div>
         </div>
       </div>
-      <div class='content-block'>
+      <div class="content-block banner-block js-transition-block">
         <picture>
-          <img src="media/coffee-shop-interior.jpg" alt="Bikes placed under the menu" />
+          <img src='../tchgrnds/media/coffee-shop-interior.jpg' alt="Bikes placed under the menu" />
         </picture>
       </div>
-      <div class='content-block'>
-        <div class='content-wrapper'>
-          <div>
-            <picture>
-              <img src='media/coffee-chemex.jpg' alt='Barista preparing chemex coffee'>
-            </picture>
-          </div>
-          <div>
-            <h2>Take some time to enjoy</h2>
-            <p>Take a break and enjoy your weekend with our special breakfast menus</p>
-          </div>
-        </div>
-      </div>
     </main>
-    <footer>
+    <footer class="footer">
       <div class="content-wrapper">
         <span>copyright twenty-twenty-one</span>
       </div>
     </footer>
-    <script src="src/scripts/index.ts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script>
+      const blocks = gsap.utils.toArray('.js-transition-block');
+      blocks.forEach((block) =>
+        gsap.from(block, {
+          autoAlpha: 0,
+          y: 40,
+          duration: 1,
+          ease: 'power3.ease-out',
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 60%',
+          },
+        }),
+      );
+    </script>
   </body>
 </html>

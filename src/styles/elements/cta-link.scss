@@ -1,0 +1,23 @@
+.cta-link {
+  display: inline-block;
+  padding: 15px 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  color: $white;
+  min-width: 240px;
+  margin: 0 10px;
+
+  &.primary {
+    border-color: magenta;
+    background: magenta;
+    color: $white;
+  }
+
+  &:hover {
+    color: $white;
+    opacity: 0.9;
+  }
+}

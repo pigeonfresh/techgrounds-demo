@@ -1,0 +1,47 @@
+.text-block {
+  @media (max-width: 767.5px) {
+    picture {
+      margin: 0 -20px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 30px auto 30px;
+    grid-gap: $gridGap;
+
+    .visual-wrapper {
+      position: relative;
+      grid-column: 1 / span 10;
+      grid-row: 1 / span 2;
+
+      picture {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .copy-wrapper {
+      background: $white;
+      padding: 40px;
+      position: relative;
+      grid-column: 6 / span 6;
+      grid-row: 2 / span 2;
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+}

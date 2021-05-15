@@ -1,0 +1,14 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: $white;
+  border-bottom: 1px solid rgba($black, 0.3);
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
